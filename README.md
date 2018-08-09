@@ -1,24 +1,13 @@
-# README
+# Cryptocurrency tracker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Just another cryptocurrency tracker app built with Ruby on Rails.
+To get data, my app scraps the [CoinMarketCap](https://coinmarketcap.com/all/views/all/) platform.
 
-Things you may want to cover:
+### Installation:
 
-* Ruby version
+Requirement: you need an internet connection.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- clone this repository
+- run `bundle install --without production`
+- run `rails db:migrate`
+- have some fun
