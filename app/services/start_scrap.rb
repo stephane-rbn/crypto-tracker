@@ -15,13 +15,11 @@ class StartScrap
   def save_currencies(currencies)
     if Cryptocurrency.all.empty?
       currencies.each do |name, value|
-        value[0] = ''
         currency = Cryptocurrency.new(name: name, value: value)
         currency.save
       end
     else
       currencies.each do |name, new_value|
-        new_value[0] = ''
         currency = Cryptocurrency.find_by(name: name)
         currency.value = new_value
         currency.save
@@ -32,7 +30,7 @@ class StartScrap
   def all_currencies
     currencies = []
 
-    @doc.css('a[class = link-secondary]').each do |element|
+    @doc.css('.currency-name-container').each do |element|
       currencies << element.text
     end
 
