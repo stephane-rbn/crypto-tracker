@@ -11,3 +11,11 @@ Requirement: you need an internet connection.
 - run `bundle install --without production`
 - run `rails db:migrate`
 - have some fun
+
+### Issue with this app
+
+If you get an error that looks like `undefined "value=" method for Nil class`, you should run `rails db:drop && rails db:migrate` and it will fix this unknown issue.
+
+On Heroku, run this terrible command:
+
+`heroku restart && heroku pg:reset DATABASE && heroku run rails db:migrate`
