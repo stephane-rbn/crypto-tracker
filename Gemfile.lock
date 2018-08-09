@@ -263,6 +263,7 @@ DEPENDENCIES
   mailcatcher
   minitest
   minitest-reporters
+  nokogiri
   pg
   pry-rails
   puma (~> 3.11)
