@@ -16,14 +16,14 @@ class StartScrap
     if Cryptocurrency.all.empty?
       currencies.each do |name, value|
         value[0] = ''
-        currency = Cryptocurrency.new(name: name, value: value.to_f)
+        currency = Cryptocurrency.new(name: name, value: value)
         currency.save
       end
     else
       currencies.each do |name, new_value|
         new_value[0] = ''
         currency = Cryptocurrency.find_by(name: name)
-        currency.value = new_value.to_f
+        currency.value = new_value
         currency.save
       end
     end

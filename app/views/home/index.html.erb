@@ -11,5 +11,5 @@
 <% end %>
 
 <% unless @currency.nil? %>
-  <p>The price of <%= @currency.name %> is $<%= @currency.value %></p>
+  <p>The price of <%= @currency.name %> is <%= @currency.value %></p>
 <% end %>
