@@ -15,13 +15,15 @@ class StartScrap
   def save_currencies(currencies)
     if Cryptocurrency.all.empty?
       currencies.each do |name, value|
+        break if value == '$?'
         currency = Cryptocurrency.new(name: name, value: value)
         currency.save
       end
     else
-      currencies.each do |name, new_value|
+      currencies.each do |name, value|
+        break if value == '$?'
         currency = Cryptocurrency.find_by(name: name)
-        currency.value = new_value
+        currency.value = value
         currency.save
       end
     end

@@ -1,7 +1,7 @@
 <h1>Cryptocurrency Tracker</h1>
 <p>Select you favorite currency to know its value!</p>
 
-<%= form_tag url_for(action: 'index'), method: 'get' do %>
+<%= form_tag url_for(action: 'display'), method: 'get' do %>
   Cryptocurrency name:
   <%= select_tag :cryptocurrency_id, options_for_select(
     @cryptocurrencies.map { |cryptocurrency| [cryptocurrency.name, cryptocurrency.id] }
