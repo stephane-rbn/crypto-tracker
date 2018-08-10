@@ -3,6 +3,13 @@
 Just another cryptocurrency tracker app built with Ruby on Rails.
 To get data, my app scraps the [CoinMarketCap](https://coinmarketcap.com/all/views/all/) platform.
 
+## Issue
+ I put the link of the app in production that DOESN'T work... Désolé.
+
+That's why I took a GIF as demo of my app, locally.
+
+![demo gif](http://g.recordit.co/xCLDMvZnDi.gif)
+
 ### Installation:
 
 Requirement: you need an internet connection.
@@ -11,11 +18,3 @@ Requirement: you need an internet connection.
 - run `bundle install --without production`
 - run `rails db:migrate`
 - have some fun
-
-### Issue with this app
-
-If you get an error that looks like `undefined "value=" method for Nil class`, you should run `rails db:drop && rails db:migrate` and it will fix this unknown issue.
-
-On Heroku, run this terrible command:
-
-`heroku restart && heroku pg:reset DATABASE && heroku run rails db:migrate`
