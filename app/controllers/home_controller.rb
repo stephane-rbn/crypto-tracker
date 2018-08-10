@@ -2,7 +2,6 @@ class HomeController < ApplicationController
   def index
     StartScrap.new.perform
     @cryptocurrencies = Cryptocurrency.all
-
   end
 
   def display
