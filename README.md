@@ -3,7 +3,7 @@
 Just another cryptocurrency tracker app built with Ruby on Rails.
 To get data, my app scraps the [CoinMarketCap](https://coinmarketcap.com/all/views/all/) platform.
 
-![demo gif](https://media.giphy.com/media/51UolKBJq9be42w7mW/giphy.gif)
+![demo gif](https://media.giphy.com/media/1XfikabAZ0X3DoNdGt/giphy.gif)
 
 ### Installation:
 
