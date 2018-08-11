@@ -13,3 +13,8 @@ Requirement: you need an internet connection.
 - run `bundle install --without production`
 - run `rails db:migrate`
 - have some fun
+
+TODO:
+
+- should update the submitted currency value
+- tests/specs
