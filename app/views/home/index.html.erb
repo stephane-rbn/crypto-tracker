@@ -1,15 +1,22 @@
 <h1>Cryptocurrency Tracker</h1>
-<p>Select you favorite currency to know its value!</p>
 
-<%= form_tag url_for(action: 'display'), method: 'get' do %>
-  Cryptocurrency name:
-  <%= select_tag :cryptocurrency_id, options_for_select(
-    @cryptocurrencies.map { |cryptocurrency| [cryptocurrency.name, cryptocurrency.id] }
-  ) %>
+<% if Cryptocurrency.all.empty? %>
+  <p>Click the button bellow to retrieve all cryptocurrencies and their values:</p>
+  <%= link_to 'Scrap!', save_path %>
+<% else %>
+  <p>Select you favorite currency to know its value!</p>
 
-  <%= submit_tag 'Go' %>
+  <%= form_tag url_for(action: 'display'), method: 'get' do %>
+    Cryptocurrency name:
+    <%= select_tag :cryptocurrency_id, options_for_select(
+      @cryptocurrencies.map { |cryptocurrency| [cryptocurrency.name, cryptocurrency.id] }
+    ) %>
+
+    <%= submit_tag 'Go' %>
+  <% end %>
+
+  <% unless @currency.nil? %>
+    <p>The price of <%= @currency.name %> is <%= @currency.value %></p>
+  <% end %>
 <% end %>
 
-<% unless @currency.nil? %>
-  <p>The price of <%= @currency.name %> is <%= @currency.value %></p>
-<% end %>

@@ -1,7 +1,12 @@
 class HomeController < ApplicationController
   def index
+    @cryptocurrencies = Cryptocurrency.all
+  end
+
+  def save
     StartScrap.new.perform
     @cryptocurrencies = Cryptocurrency.all
+    redirect_to root_path
   end
 
   def display
